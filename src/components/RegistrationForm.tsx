@@ -136,7 +136,7 @@ export function RegistrationForm() {
     ) : null;
 
   const inputClass =
-    "mt-1.5 w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 transition-all duration-200 focus:border-indigo-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500/20 hover:border-slate-300";
+    "mt-1.5 w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 transition-all duration-200 focus:border-[#2d4084] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#2d4084]/20 hover:border-slate-300";
   const sectionClass =
     "rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm shadow-slate-200/50 sm:p-8";
 
@@ -146,7 +146,7 @@ export function RegistrationForm() {
       className="flex flex-col gap-8 rounded-2xl border border-slate-200/80 bg-white p-6 shadow-lg shadow-slate-200/50 sm:p-10"
     >
       <header className="text-center">
-        <div className="mx-auto mb-3 h-1 w-12 rounded-full bg-indigo-500" />
+        <div className="mx-auto mb-3 h-1 w-12 rounded-full bg-[#f01923]" />
         <h1 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
           TIMES SCHOOL OF HIGHER EDUCATION
         </h1>
@@ -169,7 +169,7 @@ export function RegistrationForm() {
       {/* 1. Programme Selection */}
       <section className={sectionClass}>
         <h2 className="flex items-center gap-2 text-lg font-semibold text-slate-900">
-          <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-indigo-100 text-sm font-medium text-indigo-700">
+          <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#2d4084]/10 text-sm font-medium text-[#2d4084]">
             1
           </span>
           Programme Selection / <span className="font-normal text-slate-600">පාඨමාලා තේරීම</span>
@@ -202,7 +202,7 @@ export function RegistrationForm() {
                       programmeCategory: "undergraduate",
                     }));
                   }}
-                  className="h-4 w-4 border-slate-300 text-indigo-600 focus:ring-indigo-500"
+                  className="h-4 w-4 border-slate-300 text-[#2d4084] focus:ring-[#2d4084]"
                 />
                 <span>{label}</span>
               </label>
@@ -227,7 +227,7 @@ export function RegistrationForm() {
                       programmeCategory: "postgraduate",
                     }));
                   }}
-                  className="h-4 w-4 border-slate-300 text-indigo-600 focus:ring-indigo-500"
+                  className="h-4 w-4 border-slate-300 text-[#2d4084] focus:ring-[#2d4084]"
                 />
                 <span>Master of Business Administration</span>
               </label>
@@ -253,7 +253,7 @@ export function RegistrationForm() {
                       programmeCategory: "diploma_certificate",
                     }));
                   }}
-                  className="h-4 w-4 border-slate-300 text-indigo-600 focus:ring-indigo-500"
+                  className="h-4 w-4 border-slate-300 text-[#2d4084] focus:ring-[#2d4084]"
                 />
                 <span>
                   Diploma in Professional English and Digital Skills
@@ -275,7 +275,7 @@ export function RegistrationForm() {
                       programmeCategory: "diploma_certificate",
                     }));
                   }}
-                  className="h-4 w-4 border-slate-300 text-indigo-600 focus:ring-indigo-500"
+                  className="h-4 w-4 border-slate-300 text-[#2d4084] focus:ring-[#2d4084]"
                 />
                 <span>
                   Advanced Certificate in Professional Communication and Digital
@@ -301,7 +301,7 @@ export function RegistrationForm() {
                       programmeCategory: "languages",
                     }));
                   }}
-                  className="h-4 w-4 border-slate-300 text-indigo-600 focus:ring-indigo-500"
+                  className="h-4 w-4 border-slate-300 text-[#2d4084] focus:ring-[#2d4084]"
                 />
                 <span>Cambridge Linguaskill</span>
               </label>
@@ -314,7 +314,7 @@ export function RegistrationForm() {
       {/* 2. Personal Information */}
       <section className={`grid gap-5 ${sectionClass}`}>
         <h2 className="flex items-center gap-2 text-lg font-semibold text-slate-900">
-          <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-indigo-100 text-sm font-medium text-indigo-700">
+          <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#2d4084]/10 text-sm font-medium text-[#2d4084]">
             2
           </span>
           Personal Information /{" "}
@@ -377,7 +377,7 @@ export function RegistrationForm() {
                     value={value}
                     checked={values.gender === value}
                     onChange={handleChange}
-                    className="h-4 w-4 border-slate-300 text-indigo-600 focus:ring-indigo-500"
+                    className="h-4 w-4 border-slate-300 text-[#2d4084] focus:ring-[#2d4084]"
                   />
                   <span>{label}</span>
                 </label>
@@ -404,7 +404,7 @@ export function RegistrationForm() {
             </label>
             <div
               className={`mt-1.5 flex flex-col items-center justify-center rounded-xl border-2 border-dashed px-3 py-4 text-center text-xs transition-colors ${
-                profileDragOver ? "border-indigo-500 bg-indigo-50/50" : "border-slate-200 bg-slate-50/50"
+                profileDragOver ? "border-[#2d4084] bg-[#2d4084]/5" : "border-slate-200 bg-slate-50/50"
               }`}
               onDragOver={(e) => {
                 e.preventDefault();
@@ -431,7 +431,7 @@ export function RegistrationForm() {
               />
               <label
                 htmlFor="profile-image-input"
-                className="cursor-pointer font-medium text-indigo-600 hover:text-indigo-700"
+                className="cursor-pointer font-medium text-[#2d4084] hover:opacity-80"
               >
                 Click to upload
               </label>
@@ -440,16 +440,16 @@ export function RegistrationForm() {
               </p>
               {values.profileImageBase64 && (
                 <div className="mt-3 flex flex-col items-center gap-2">
-                  <p className="text-[11px] font-medium text-emerald-600">Preview</p>
+                  <p className="text-[11px] font-medium text-[#2d4084]">Preview</p>
                   <img
                     src={values.profileImageBase64}
                     alt="Profile preview"
-                    className="h-24 w-24 rounded-full object-cover ring-2 ring-indigo-200"
+                    className="h-24 w-24 rounded-full object-cover ring-2 ring-[#2d4084]/30"
                   />
                   <button
                     type="button"
                     onClick={() => setValues((prev) => ({ ...prev, profileImageBase64: "" }))}
-                    className="mt-1 rounded-lg border border-rose-200 bg-rose-50 px-3 py-1.5 text-xs font-medium text-rose-700 transition hover:bg-rose-100"
+                    className="mt-1 rounded-lg border border-[#f01923]/40 bg-[#f01923]/10 px-3 py-1.5 text-xs font-medium text-[#f01923] transition hover:bg-[#f01923]/20"
                   >
                     Remove image
                   </button>
@@ -463,7 +463,7 @@ export function RegistrationForm() {
       {/* 3. Contact Information */}
       <section className={`grid gap-5 ${sectionClass}`}>
         <h2 className="flex items-center gap-2 text-lg font-semibold text-slate-900">
-          <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-indigo-100 text-sm font-medium text-indigo-700">
+          <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#2d4084]/10 text-sm font-medium text-[#2d4084]">
             3
           </span>
           Contact Information /{" "}
@@ -547,7 +547,7 @@ export function RegistrationForm() {
       {/* 4. Education Background */}
       <section className={`grid gap-5 ${sectionClass}`}>
         <h2 className="flex items-center gap-2 text-lg font-semibold text-slate-900">
-          <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-indigo-100 text-sm font-medium text-indigo-700">
+          <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#2d4084]/10 text-sm font-medium text-[#2d4084]">
             4
           </span>
           Education Background /{" "}
@@ -589,7 +589,7 @@ export function RegistrationForm() {
                     value={value}
                     checked={values.highestEducationQualification === value}
                     onChange={handleChange}
-                    className="h-4 w-4 border-slate-300 text-indigo-600 focus:ring-indigo-500"
+                    className="h-4 w-4 border-slate-300 text-[#2d4084] focus:ring-[#2d4084]"
                   />
                   <span>{label}</span>
                 </label>
@@ -643,7 +643,7 @@ export function RegistrationForm() {
       {/* 5. Payment Information */}
       <section className={`grid gap-5 ${sectionClass}`}>
         <h2 className="flex items-center gap-2 text-lg font-semibold text-slate-900">
-          <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-indigo-100 text-sm font-medium text-indigo-700">
+          <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#2d4084]/10 text-sm font-medium text-[#2d4084]">
             5
           </span>
           Payment Information /{" "}
@@ -667,7 +667,7 @@ export function RegistrationForm() {
                     value={value}
                     checked={values.paymentMethod === value}
                     onChange={handleChange}
-                    className="h-4 w-4 border-slate-300 text-indigo-600 focus:ring-indigo-500"
+                    className="h-4 w-4 border-slate-300 text-[#2d4084] focus:ring-[#2d4084]"
                   />
                   <span>{label}</span>
                 </label>
@@ -721,7 +721,7 @@ export function RegistrationForm() {
             </label>
             <div
               className={`mt-1.5 flex flex-col items-center justify-center rounded-xl border-2 border-dashed px-3 py-4 text-center text-xs transition-colors ${
-                receiptDragOver ? "border-indigo-500 bg-indigo-50/50" : "border-slate-200 bg-slate-50/50"
+                receiptDragOver ? "border-[#2d4084] bg-[#2d4084]/5" : "border-slate-200 bg-slate-50/50"
               }`}
               onDragOver={(e) => {
                 e.preventDefault();
@@ -748,7 +748,7 @@ export function RegistrationForm() {
               />
               <label
                 htmlFor="bank-receipt-input"
-                className="cursor-pointer font-medium text-indigo-600 hover:text-indigo-700"
+                className="cursor-pointer font-medium text-[#2d4084] hover:opacity-80"
               >
                 Click to upload
               </label>
@@ -757,7 +757,7 @@ export function RegistrationForm() {
               </p>
               {values.bankReceiptBase64 && (
                 <div className="mt-3 flex flex-col items-center gap-2">
-                  <p className="text-[11px] font-medium text-emerald-600">Preview</p>
+                  <p className="text-[11px] font-medium text-[#2d4084]">Preview</p>
                   <img
                     src={values.bankReceiptBase64}
                     alt="Bank receipt preview"
@@ -766,7 +766,7 @@ export function RegistrationForm() {
                   <button
                     type="button"
                     onClick={() => setValues((prev) => ({ ...prev, bankReceiptBase64: "" }))}
-                    className="mt-1 rounded-lg border border-rose-200 bg-rose-50 px-3 py-1.5 text-xs font-medium text-rose-700 transition hover:bg-rose-100"
+                    className="mt-1 rounded-lg border border-[#f01923]/40 bg-[#f01923]/10 px-3 py-1.5 text-xs font-medium text-[#f01923] transition hover:bg-[#f01923]/20"
                   >
                     Remove image
                   </button>
@@ -780,7 +780,7 @@ export function RegistrationForm() {
       {/* 6. Declaration */}
       <section className={`grid gap-5 ${sectionClass}`}>
         <h2 className="flex items-center gap-2 text-lg font-semibold text-slate-900">
-          <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-indigo-100 text-sm font-medium text-indigo-700">
+          <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#2d4084]/10 text-sm font-medium text-[#2d4084]">
             6
           </span>
           Declaration / <span className="font-normal text-slate-600">ප්‍රකාශය</span>
@@ -800,7 +800,7 @@ export function RegistrationForm() {
             name="applicantSigned"
             checked={values.applicantSigned}
             onChange={handleChange}
-            className="h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"
+            className="h-4 w-4 rounded border-slate-300 text-[#2d4084] focus:ring-[#2d4084]"
           />
           <span>I agree to the above declaration.</span>
         </label>
@@ -811,7 +811,7 @@ export function RegistrationForm() {
         <button
           type="submit"
           disabled={submitting}
-          className="inline-flex items-center justify-center rounded-xl bg-indigo-600 px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-indigo-500/25 transition hover:bg-indigo-700 hover:shadow-indigo-500/30 disabled:cursor-not-allowed disabled:opacity-60 disabled:shadow-none"
+          className="inline-flex items-center justify-center rounded-xl bg-[#f01923] px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-[#f01923]/30 transition hover:bg-[#d9151e] hover:shadow-[#f01923]/40 disabled:cursor-not-allowed disabled:opacity-60 disabled:shadow-none"
         >
           {submitting ? "Submitting…" : "Submit Registration"}
         </button>

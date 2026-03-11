@@ -5,9 +5,12 @@
   --foreground: #0f172a;
   --card: #ffffff;
   --card-border: rgba(226, 232, 240, 0.8);
-  --primary: #4f46e5;
-  --primary-hover: #4338ca;
-  --primary-light: rgba(79, 70, 229, 0.08);
+  --primary: #2d4084;
+  --primary-hover: #243366;
+  --primary-light: rgba(45, 64, 132, 0.1);
+  --accent: #f01923;
+  --accent-hover: #d9151e;
+  --accent-light: rgba(240, 25, 35, 0.1);
   --muted: #64748b;
   --success: #059669;
   --success-bg: #ecfdf5;
