@@ -132,46 +132,55 @@ export function RegistrationForm() {
 
   const renderError = (field: keyof RegistrationInput) =>
     errors[field] ? (
-      <p className="mt-1 text-sm text-red-600">{errors[field]}</p>
+      <p className="mt-1.5 text-sm text-rose-600">{errors[field]}</p>
     ) : null;
+
+  const inputClass =
+    "mt-1.5 w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 transition-all duration-200 focus:border-indigo-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500/20 hover:border-slate-300";
+  const sectionClass =
+    "rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm shadow-slate-200/50 sm:p-8";
 
   return (
     <form
       onSubmit={handleSubmit}
-      className="mx-auto flex max-w-4xl flex-col gap-8 rounded-xl bg-white p-6 shadow-sm sm:p-10"
+      className="flex flex-col gap-8 rounded-2xl border border-slate-200/80 bg-white p-6 shadow-lg shadow-slate-200/50 sm:p-10"
     >
       <header className="text-center">
-        <h1 className="text-2xl font-semibold text-gray-900 sm:text-3xl">
+        <div className="mx-auto mb-3 h-1 w-12 rounded-full bg-indigo-500" />
+        <h1 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
           TIMES SCHOOL OF HIGHER EDUCATION
         </h1>
-        <p className="mt-2 text-lg font-medium text-gray-800">
-          STUDENT REGISTRATION FORM
+        <p className="mt-2 text-base font-medium text-slate-600">
+          Student Registration
         </p>
       </header>
 
       {submitError && (
-        <div className="rounded-md border border-red-300 bg-red-50 p-3 text-sm text-red-800">
+        <div className="rounded-xl border border-rose-200 bg-rose-50/80 px-4 py-3 text-sm text-rose-800">
           {submitError}
         </div>
       )}
       {submitSuccess && (
-        <div className="rounded-md border border-emerald-300 bg-emerald-50 p-3 text-sm text-emerald-800">
+        <div className="rounded-xl border border-emerald-200 bg-emerald-50/80 px-4 py-3 text-sm font-medium text-emerald-800">
           Registration received. Thank you.
         </div>
       )}
 
       {/* 1. Programme Selection */}
-      <section>
-        <h2 className="text-lg font-semibold text-gray-900">
-          1. Programme Selection / <span className="font-normal">පාඨමාලා තේරීම</span>
+      <section className={sectionClass}>
+        <h2 className="flex items-center gap-2 text-lg font-semibold text-slate-900">
+          <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-indigo-100 text-sm font-medium text-indigo-700">
+            1
+          </span>
+          Programme Selection / <span className="font-normal text-slate-600">පාඨමාලා තේරීම</span>
         </h2>
-        <p className="mt-1 text-sm text-gray-600">
+        <p className="mt-2 text-sm text-slate-500">
           Please choose the program you are registering for / කරුණාකර ඔබ ලියාපදිංචි වන පාඨමාලාව තෝරාගන්න
         </p>
 
-        <div className="mt-4 grid gap-4 md:grid-cols-2">
-          <fieldset className="space-y-2">
-            <legend className="text-sm font-semibold text-gray-800">
+        <div className="mt-6 grid gap-6 md:grid-cols-2">
+          <fieldset className="space-y-3 rounded-xl border border-slate-100 bg-slate-50/50 p-4">
+            <legend className="text-sm font-semibold text-slate-800">
               Undergraduate Programmes
             </legend>
             {[
@@ -193,7 +202,7 @@ export function RegistrationForm() {
                       programmeCategory: "undergraduate",
                     }));
                   }}
-                  className="h-4 w-4 border-gray-300 text-blue-600 focus:ring-blue-500"
+                  className="h-4 w-4 border-slate-300 text-indigo-600 focus:ring-indigo-500"
                 />
                 <span>{label}</span>
               </label>
@@ -201,8 +210,8 @@ export function RegistrationForm() {
           </fieldset>
 
           <div className="space-y-4">
-            <fieldset className="space-y-2">
-              <legend className="text-sm font-semibold text-gray-800">
+            <fieldset className="space-y-3 rounded-xl border border-slate-100 bg-slate-50/50 p-4">
+              <legend className="text-sm font-semibold text-slate-800">
                 Postgraduate Programmes
               </legend>
               <label className="flex cursor-pointer items-center gap-2 text-sm">
@@ -218,14 +227,14 @@ export function RegistrationForm() {
                       programmeCategory: "postgraduate",
                     }));
                   }}
-                  className="h-4 w-4 border-gray-300 text-blue-600 focus:ring-blue-500"
+                  className="h-4 w-4 border-slate-300 text-indigo-600 focus:ring-indigo-500"
                 />
                 <span>Master of Business Administration</span>
               </label>
             </fieldset>
 
-            <fieldset className="space-y-2">
-              <legend className="text-sm font-semibold text-gray-800">
+            <fieldset className="space-y-3 rounded-xl border border-slate-100 bg-slate-50/50 p-4">
+              <legend className="text-sm font-semibold text-slate-800">
                 Diploma / Certificate Programmes
               </legend>
               <label className="flex cursor-pointer items-center gap-2 text-sm">
@@ -244,7 +253,7 @@ export function RegistrationForm() {
                       programmeCategory: "diploma_certificate",
                     }));
                   }}
-                  className="h-4 w-4 border-gray-300 text-blue-600 focus:ring-blue-500"
+                  className="h-4 w-4 border-slate-300 text-indigo-600 focus:ring-indigo-500"
                 />
                 <span>
                   Diploma in Professional English and Digital Skills
@@ -266,7 +275,7 @@ export function RegistrationForm() {
                       programmeCategory: "diploma_certificate",
                     }));
                   }}
-                  className="h-4 w-4 border-gray-300 text-blue-600 focus:ring-blue-500"
+                  className="h-4 w-4 border-slate-300 text-indigo-600 focus:ring-indigo-500"
                 />
                 <span>
                   Advanced Certificate in Professional Communication and Digital
@@ -275,8 +284,8 @@ export function RegistrationForm() {
               </label>
             </fieldset>
 
-            <fieldset className="space-y-2">
-              <legend className="text-sm font-semibold text-gray-800">
+            <fieldset className="space-y-3 rounded-xl border border-slate-100 bg-slate-50/50 p-4">
+              <legend className="text-sm font-semibold text-slate-800">
                 Languages
               </legend>
               <label className="flex cursor-pointer items-center gap-2 text-sm">
@@ -292,7 +301,7 @@ export function RegistrationForm() {
                       programmeCategory: "languages",
                     }));
                   }}
-                  className="h-4 w-4 border-gray-300 text-blue-600 focus:ring-blue-500"
+                  className="h-4 w-4 border-slate-300 text-indigo-600 focus:ring-indigo-500"
                 />
                 <span>Cambridge Linguaskill</span>
               </label>
@@ -303,55 +312,58 @@ export function RegistrationForm() {
       </section>
 
       {/* 2. Personal Information */}
-      <section className="grid gap-4 rounded-lg border border-gray-200 p-4 sm:p-6">
-        <h2 className="text-lg font-semibold text-gray-900">
-          2. Personal Information /{" "}
-          <span className="font-normal">පෞද්ගලික තොරතුරු</span>
+      <section className={`grid gap-5 ${sectionClass}`}>
+        <h2 className="flex items-center gap-2 text-lg font-semibold text-slate-900">
+          <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-indigo-100 text-sm font-medium text-indigo-700">
+            2
+          </span>
+          Personal Information /{" "}
+          <span className="font-normal text-slate-600">පෞද්ගලික තොරතුරු</span>
         </h2>
-        <div className="grid gap-4 md:grid-cols-2">
+        <div className="grid gap-5 md:grid-cols-2">
           <div>
-            <label className="block text-sm font-medium text-gray-700">
-              Full Name / <span className="font-normal">සම්පූර්ණ නම</span>
+            <label className="block text-sm font-medium text-slate-700">
+              Full Name / <span className="font-normal text-slate-500">සම්පූර්ණ නම</span>
             </label>
             <input
               type="text"
               name="fullName"
               value={values.fullName}
               onChange={handleChange}
-              className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className={inputClass}
             />
             {renderError("fullName")}
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label className="block text-sm font-medium text-slate-700">
               Name with Initials /{" "}
-              <span className="font-normal">මුලකුරු සමග නම</span>
+              <span className="font-normal text-slate-500">මුලකුරු සමග නම</span>
             </label>
             <input
               type="text"
               name="nameWithInitials"
               value={values.nameWithInitials}
               onChange={handleChange}
-              className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className={inputClass}
             />
             {renderError("nameWithInitials")}
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">
-              Date of Birth / <span className="font-normal">උපන් දිනය</span>
+            <label className="block text-sm font-medium text-slate-700">
+              Date of Birth / <span className="font-normal text-slate-500">උපන් දිනය</span>
             </label>
             <input
               type="date"
               name="dateOfBirth"
               value={values.dateOfBirth}
               onChange={handleChange}
-              className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className={inputClass}
             />
             {renderError("dateOfBirth")}
           </div>
           <div>
-            <span className="block text-sm font-medium text-gray-700">
-              Gender / <span className="font-normal">ස්ත්‍රී - පුරුෂ භාවය</span>
+            <span className="block text-sm font-medium text-slate-700">
+              Gender / <span className="font-normal text-slate-500">ස්ත්‍රී - පුරුෂ භාවය</span>
             </span>
             <div className="mt-1 flex gap-4">
               {[
@@ -365,7 +377,7 @@ export function RegistrationForm() {
                     value={value}
                     checked={values.gender === value}
                     onChange={handleChange}
-                    className="h-4 w-4 border-gray-300 text-blue-600 focus:ring-blue-500"
+                    className="h-4 w-4 border-slate-300 text-indigo-600 focus:ring-indigo-500"
                   />
                   <span>{label}</span>
                 </label>
@@ -374,25 +386,25 @@ export function RegistrationForm() {
             {renderError("gender")}
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">
-              NIC / <span className="font-normal">ජා.හැ. අංකය</span>
+            <label className="block text-sm font-medium text-slate-700">
+              NIC / <span className="font-normal text-slate-500">ජා.හැ. අංකය</span>
             </label>
             <input
               type="text"
               name="nic"
               value={values.nic}
               onChange={handleChange}
-              className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className={inputClass}
             />
             {renderError("nic")}
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label className="block text-sm font-medium text-slate-700">
               Profile Photo (optional)
             </label>
             <div
-              className={`mt-1 flex flex-col items-center justify-center rounded-md border-2 border-dashed px-3 py-4 text-center text-xs ${
-                profileDragOver ? "border-blue-500 bg-blue-50" : "border-gray-300 bg-gray-50"
+              className={`mt-1.5 flex flex-col items-center justify-center rounded-xl border-2 border-dashed px-3 py-4 text-center text-xs transition-colors ${
+                profileDragOver ? "border-indigo-500 bg-indigo-50/50" : "border-slate-200 bg-slate-50/50"
               }`}
               onDragOver={(e) => {
                 e.preventDefault();
@@ -410,6 +422,7 @@ export function RegistrationForm() {
               }}
             >
               <input
+                key={values.profileImageBase64 ? "has-profile" : "no-profile"}
                 type="file"
                 accept="image/*"
                 onChange={(e) => handleFileChange(e, "profileImageBase64")}
@@ -418,21 +431,28 @@ export function RegistrationForm() {
               />
               <label
                 htmlFor="profile-image-input"
-                className="cursor-pointer font-medium text-blue-700"
+                className="cursor-pointer font-medium text-indigo-600 hover:text-indigo-700"
               >
                 Click to upload
               </label>
-              <p className="mt-1 text-gray-500">
+              <p className="mt-1 text-slate-500">
                 or drag and drop an image (max 2 MB)
               </p>
               {values.profileImageBase64 && (
                 <div className="mt-3 flex flex-col items-center gap-2">
-                  <p className="text-[11px] text-emerald-700">Preview:</p>
+                  <p className="text-[11px] font-medium text-emerald-600">Preview</p>
                   <img
                     src={values.profileImageBase64}
                     alt="Profile preview"
-                    className="h-24 w-24 rounded-full object-cover ring-2 ring-emerald-500"
+                    className="h-24 w-24 rounded-full object-cover ring-2 ring-indigo-200"
                   />
+                  <button
+                    type="button"
+                    onClick={() => setValues((prev) => ({ ...prev, profileImageBase64: "" }))}
+                    className="mt-1 rounded-lg border border-rose-200 bg-rose-50 px-3 py-1.5 text-xs font-medium text-rose-700 transition hover:bg-rose-100"
+                  >
+                    Remove image
+                  </button>
                 </div>
               )}
             </div>
@@ -441,57 +461,60 @@ export function RegistrationForm() {
       </section>
 
       {/* 3. Contact Information */}
-      <section className="grid gap-4 rounded-lg border border-gray-200 p-4 sm:p-6">
-        <h2 className="text-lg font-semibold text-gray-900">
-          3. Contact Information /{" "}
-          <span className="font-normal">සම්බන්ධ වියහැකි තොරතුරු</span>
+      <section className={`grid gap-5 ${sectionClass}`}>
+        <h2 className="flex items-center gap-2 text-lg font-semibold text-slate-900">
+          <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-indigo-100 text-sm font-medium text-indigo-700">
+            3
+          </span>
+          Contact Information /{" "}
+          <span className="font-normal text-slate-600">සම්බන්ධ වියහැකි තොරතුරු</span>
         </h2>
-        <div className="grid gap-4 md:grid-cols-2">
+        <div className="grid gap-5 md:grid-cols-2">
           <div className="md:col-span-2">
-            <label className="block text-sm font-medium text-gray-700">
-              Address / <span className="font-normal">ලිපිනය</span>
+            <label className="block text-sm font-medium text-slate-700">
+              Address / <span className="font-normal text-slate-500">ලිපිනය</span>
             </label>
             <textarea
               name="address"
               value={values.address}
               onChange={handleChange}
               rows={3}
-              className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className={`${inputClass} min-h-[80px] resize-y`}
             />
             {renderError("address")}
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label className="block text-sm font-medium text-slate-700">
               Mobile Number /{" "}
-              <span className="font-normal">ජංගම දුරකථන අංකය</span>
+              <span className="font-normal text-slate-500">ජංගම දුරකථන අංකය</span>
             </label>
             <input
               type="tel"
               name="mobileNumber"
               value={values.mobileNumber}
               onChange={handleChange}
-              className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className={inputClass}
             />
             {renderError("mobileNumber")}
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label className="block text-sm font-medium text-slate-700">
               Email Address /{" "}
-              <span className="font-normal">විද්‍යුත් තැපෑල</span>
+              <span className="font-normal text-slate-500">විද්‍යුත් තැපෑල</span>
             </label>
             <input
               type="email"
               name="email"
               value={values.email}
               onChange={handleChange}
-              className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className={inputClass}
             />
             {renderError("email")}
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label className="block text-sm font-medium text-slate-700">
               Emergency Contact Name /{" "}
-              <span className="font-normal">
+              <span className="font-normal text-slate-500">
                 හදිසි අවස්ථාවක සම්බන්ධ කරගත යුතු පුද්ගලයාගේ නම
               </span>
             </label>
@@ -500,21 +523,21 @@ export function RegistrationForm() {
               name="emergencyContactName"
               value={values.emergencyContactName}
               onChange={handleChange}
-              className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className={inputClass}
             />
             {renderError("emergencyContactName")}
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label className="block text-sm font-medium text-slate-700">
               Emergency Contact Number /{" "}
-              <span className="font-normal">දුරකථන අංකය</span>
+              <span className="font-normal text-slate-500">දුරකථන අංකය</span>
             </label>
             <input
               type="tel"
               name="emergencyContactNumber"
               value={values.emergencyContactNumber}
               onChange={handleChange}
-              className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className={inputClass}
             />
             {renderError("emergencyContactNumber")}
           </div>
@@ -522,30 +545,33 @@ export function RegistrationForm() {
       </section>
 
       {/* 4. Education Background */}
-      <section className="grid gap-4 rounded-lg border border-gray-200 p-4 sm:p-6">
-        <h2 className="text-lg font-semibold text-gray-900">
-          4. Education Background /{" "}
-          <span className="font-normal">අධ්‍යාපන පසුබිම</span>
+      <section className={`grid gap-5 ${sectionClass}`}>
+        <h2 className="flex items-center gap-2 text-lg font-semibold text-slate-900">
+          <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-indigo-100 text-sm font-medium text-indigo-700">
+            4
+          </span>
+          Education Background /{" "}
+          <span className="font-normal text-slate-600">අධ්‍යාපන පසුබිම</span>
         </h2>
-        <div className="grid gap-4 md:grid-cols-2">
+        <div className="grid gap-5 md:grid-cols-2">
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label className="block text-sm font-medium text-slate-700">
               School / Institution /{" "}
-              <span className="font-normal">පාසල / ආයතනය</span>
+              <span className="font-normal text-slate-500">පාසල / ආයතනය</span>
             </label>
             <input
               type="text"
               name="schoolInstitution"
               value={values.schoolInstitution}
               onChange={handleChange}
-              className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className={inputClass}
             />
             {renderError("schoolInstitution")}
           </div>
           <div>
-            <span className="block text-sm font-medium text-gray-700">
+            <span className="block text-sm font-medium text-slate-700">
               Highest Education Qualification /{" "}
-              <span className="font-normal">ඉහළම අධ්‍යාපන සුදුසුකම්</span>
+              <span className="font-normal text-slate-500">ඉහළම අධ්‍යාපන සුදුසුකම්</span>
             </span>
             <div className="mt-1 grid grid-cols-2 gap-2 text-sm">
               {[
@@ -563,7 +589,7 @@ export function RegistrationForm() {
                     value={value}
                     checked={values.highestEducationQualification === value}
                     onChange={handleChange}
-                    className="h-4 w-4 border-gray-300 text-blue-600 focus:ring-blue-500"
+                    className="h-4 w-4 border-slate-300 text-indigo-600 focus:ring-indigo-500"
                   />
                   <span>{label}</span>
                 </label>
@@ -572,42 +598,42 @@ export function RegistrationForm() {
             {renderError("highestEducationQualification")}
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">
-              Qualification 1 / <span className="font-normal">සුදුසුකම් 1</span>
+            <label className="block text-sm font-medium text-slate-700">
+              Qualification 1 / <span className="font-normal text-slate-500">සුදුසුකම් 1</span>
             </label>
             <input
               type="text"
               name="qualification1"
               value={values.qualification1 ?? ""}
               onChange={handleChange}
-              className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className={inputClass}
             />
             {renderError("qualification1")}
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">
-              Qualification 2 / <span className="font-normal">සුදුසුකම් 2</span>
+            <label className="block text-sm font-medium text-slate-700">
+              Qualification 2 / <span className="font-normal text-slate-500">සුදුසුකම් 2</span>
             </label>
             <input
               type="text"
               name="qualification2"
               value={values.qualification2 ?? ""}
               onChange={handleChange}
-              className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className={inputClass}
             />
             {renderError("qualification2")}
           </div>
           <div className="md:col-span-2">
-            <label className="block text-sm font-medium text-gray-700">
+            <label className="block text-sm font-medium text-slate-700">
               Other Education Qualification /{" "}
-              <span className="font-normal">වෙනත් අධ්‍යාපන සුදුසුකම්</span>
+              <span className="font-normal text-slate-500">වෙනත් අධ්‍යාපන සුදුසුකම්</span>
             </label>
             <textarea
               name="otherEducationQualification"
               value={values.otherEducationQualification ?? ""}
               onChange={handleChange}
               rows={3}
-              className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className={`${inputClass} min-h-[80px] resize-y`}
             />
             {renderError("otherEducationQualification")}
           </div>
@@ -615,22 +641,24 @@ export function RegistrationForm() {
       </section>
 
       {/* 5. Payment Information */}
-      <section className="grid gap-4 rounded-lg border border-gray-200 p-4 sm:p-6">
-        <h2 className="text-lg font-semibold text-gray-900">
-          5. Payment Information /{" "}
-          <span className="font-normal">ගෙවීම් පිළිබඳ තොරතුරු</span>
+      <section className={`grid gap-5 ${sectionClass}`}>
+        <h2 className="flex items-center gap-2 text-lg font-semibold text-slate-900">
+          <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-indigo-100 text-sm font-medium text-indigo-700">
+            5
+          </span>
+          Payment Information /{" "}
+          <span className="font-normal text-slate-600">ගෙවීම් පිළිබඳ තොරතුරු</span>
         </h2>
-        <div className="grid gap-4 md:grid-cols-2">
+        <div className="grid gap-5 md:grid-cols-2">
           <div>
-            <span className="block text-sm font-medium text-gray-700">
+            <span className="block text-sm font-medium text-slate-700">
               Payment Method /{" "}
-              <span className="font-normal">ගෙවීමේ ක්‍රමය</span>
+              <span className="font-normal text-slate-500">ගෙවීමේ ක්‍රමය</span>
             </span>
             <div className="mt-1 flex flex-col gap-1 text-sm">
               {[
                 ["cash", "Cash / මුදල්"],
                 ["bank_transfer", "Bank Transfer / බැංකු මාරු කිරීම"],
-                ["card", "Card / කාඩ්පත"],
               ].map(([value, label]) => (
                 <label key={value} className="flex items-center gap-2">
                   <input
@@ -639,7 +667,7 @@ export function RegistrationForm() {
                     value={value}
                     checked={values.paymentMethod === value}
                     onChange={handleChange}
-                    className="h-4 w-4 border-gray-300 text-blue-600 focus:ring-blue-500"
+                    className="h-4 w-4 border-slate-300 text-indigo-600 focus:ring-indigo-500"
                   />
                   <span>{label}</span>
                 </label>
@@ -648,52 +676,52 @@ export function RegistrationForm() {
             {renderError("paymentMethod")}
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">
-              Amount Paid / <span className="font-normal">ගෙවූ මුදල</span>
+            <label className="block text-sm font-medium text-slate-700">
+              Amount Paid / <span className="font-normal text-slate-500">ගෙවූ මුදල</span>
             </label>
             <input
               type="text"
               name="amountPaid"
               value={values.amountPaid ?? ""}
               onChange={handleChange}
-              className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className={inputClass}
             />
             {renderError("amountPaid")}
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">
-              Receipt Number / <span className="font-normal">රිසිට් අංකය</span>
+            <label className="block text-sm font-medium text-slate-700">
+              Receipt Number / <span className="font-normal text-slate-500">රිසිට් අංකය</span>
             </label>
             <input
               type="text"
               name="receiptNumber"
               value={values.receiptNumber ?? ""}
               onChange={handleChange}
-              className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className={inputClass}
             />
             {renderError("receiptNumber")}
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label className="block text-sm font-medium text-slate-700">
               Bank / Branch (if applicable) /{" "}
-              <span className="font-normal">බැංකුව / ශාඛාව</span>
+              <span className="font-normal text-slate-500">බැංකුව / ශාඛාව</span>
             </label>
             <input
               type="text"
               name="bankBranch"
               value={values.bankBranch ?? ""}
               onChange={handleChange}
-              className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className={inputClass}
             />
             {renderError("bankBranch")}
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label className="block text-sm font-medium text-slate-700">
               Bank Receipt Photo (optional)
             </label>
             <div
-              className={`mt-1 flex flex-col items-center justify-center rounded-md border-2 border-dashed px-3 py-4 text-center text-xs ${
-                receiptDragOver ? "border-blue-500 bg-blue-50" : "border-gray-300 bg-gray-50"
+              className={`mt-1.5 flex flex-col items-center justify-center rounded-xl border-2 border-dashed px-3 py-4 text-center text-xs transition-colors ${
+                receiptDragOver ? "border-indigo-500 bg-indigo-50/50" : "border-slate-200 bg-slate-50/50"
               }`}
               onDragOver={(e) => {
                 e.preventDefault();
@@ -711,6 +739,7 @@ export function RegistrationForm() {
               }}
             >
               <input
+                key={values.bankReceiptBase64 ? "has-receipt" : "no-receipt"}
                 type="file"
                 accept="image/*"
                 onChange={(e) => handleFileChange(e, "bankReceiptBase64")}
@@ -719,21 +748,28 @@ export function RegistrationForm() {
               />
               <label
                 htmlFor="bank-receipt-input"
-                className="cursor-pointer font-medium text-blue-700"
+                className="cursor-pointer font-medium text-indigo-600 hover:text-indigo-700"
               >
                 Click to upload
               </label>
-              <p className="mt-1 text-gray-500">
+              <p className="mt-1 text-slate-500">
                 or drag and drop a receipt image (max 2 MB)
               </p>
               {values.bankReceiptBase64 && (
                 <div className="mt-3 flex flex-col items-center gap-2">
-                  <p className="text-[11px] text-emerald-700">Preview:</p>
+                  <p className="text-[11px] font-medium text-emerald-600">Preview</p>
                   <img
                     src={values.bankReceiptBase64}
                     alt="Bank receipt preview"
-                    className="max-h-32 w-auto rounded-md border border-emerald-500 object-contain bg-white"
+                    className="max-h-32 w-auto rounded-lg border border-slate-200 object-contain bg-white shadow-sm"
                   />
+                  <button
+                    type="button"
+                    onClick={() => setValues((prev) => ({ ...prev, bankReceiptBase64: "" }))}
+                    className="mt-1 rounded-lg border border-rose-200 bg-rose-50 px-3 py-1.5 text-xs font-medium text-rose-700 transition hover:bg-rose-100"
+                  >
+                    Remove image
+                  </button>
                 </div>
               )}
             </div>
@@ -742,39 +778,42 @@ export function RegistrationForm() {
       </section>
 
       {/* 6. Declaration */}
-      <section className="grid gap-4 rounded-lg border border-gray-200 p-4 sm:p-6">
-        <h2 className="text-lg font-semibold text-gray-900">
-          6. Declaration / <span className="font-normal">ප්‍රකාශය</span>
+      <section className={`grid gap-5 ${sectionClass}`}>
+        <h2 className="flex items-center gap-2 text-lg font-semibold text-slate-900">
+          <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-indigo-100 text-sm font-medium text-indigo-700">
+            6
+          </span>
+          Declaration / <span className="font-normal text-slate-600">ප්‍රකාශය</span>
         </h2>
-        <p className="text-sm text-gray-700">
+        <p className="text-sm text-slate-700">
           I hereby declare that the above information is true and correct. I
           understand that any false information may result in the cancellation of
           my enrollment.
         </p>
-        <p className="mt-1 text-sm text-gray-700">
+        <p className="mt-1 text-sm text-slate-700">
           මම මෙහි සදහන් තොරතුරු සැබෑ සහ නිවැරදි බව සහතික කරමි. අසත්‍ය තොරතුරු
           ලබාදීමේදී ලියාපදිංචිය අවලංගු විය හැක.
         </p>
-        <label className="mt-3 flex items-center gap-2 text-sm text-gray-800">
+        <label className="mt-4 flex cursor-pointer items-center gap-3 rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-3 text-sm text-slate-800 transition-colors hover:bg-slate-50">
           <input
             type="checkbox"
             name="applicantSigned"
             checked={values.applicantSigned}
             onChange={handleChange}
-            className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+            className="h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"
           />
           <span>I agree to the above declaration.</span>
         </label>
         {renderError("applicantSigned")}
       </section>
 
-      <div className="flex items-center justify-end gap-3">
+      <div className="flex items-center justify-end border-t border-slate-100 pt-8">
         <button
           type="submit"
           disabled={submitting}
-          className="inline-flex items-center justify-center rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:bg-blue-400"
+          className="inline-flex items-center justify-center rounded-xl bg-indigo-600 px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-indigo-500/25 transition hover:bg-indigo-700 hover:shadow-indigo-500/30 disabled:cursor-not-allowed disabled:opacity-60 disabled:shadow-none"
         >
-          {submitting ? "Submitting..." : "Submit Registration"}
+          {submitting ? "Submitting…" : "Submit Registration"}
         </button>
       </div>
     </form>

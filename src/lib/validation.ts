@@ -52,7 +52,7 @@ export const registrationSchema = z.object({
   qualification1: z.string().optional(),
   qualification2: z.string().optional(),
   otherEducationQualification: z.string().optional(),
-  paymentMethod: z.enum(["cash", "bank_transfer", "card"]),
+  paymentMethod: z.enum(["cash", "bank_transfer"]),
   amountPaid: z
     .string()
     .regex(/^\d+(\.\d{1,2})?$/, "Invalid amount")
